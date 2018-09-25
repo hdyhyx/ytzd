@@ -26,7 +26,6 @@ export default {
   },
   methods: {
     openItem(item) {
-      console.log(item);
       item.isopen = !item.isopen;
       this.open = item.isopen;
     },

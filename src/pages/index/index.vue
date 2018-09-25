@@ -201,7 +201,6 @@ export default {
       wx.navigateTo({ url });
     },
     routerIndustry(data) {
-      console.log(data);
       const url =
         "/pages/industry/industry?title=" +
         data.title +

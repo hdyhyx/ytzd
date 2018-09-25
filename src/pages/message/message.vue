@@ -24,7 +24,6 @@ export default {
     wx.getStorage({
       key: "userInfo",
       success: res => {
-        console.log(res);
         this.userId = res.data.userId;
       }
     });

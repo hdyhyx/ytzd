@@ -31,7 +31,6 @@ export default {
         industryType: this.industrys.natureType,
         price: this.industrys.doble
       });
-      console.log(industryData);
       this.$emit("routerProject", industryData);
     }
   },

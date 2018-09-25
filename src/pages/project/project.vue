@@ -41,7 +41,6 @@ export default {
         if (res.code === ERR_OK) {
           if (res.data !== undefined) {
             this.projectData = this.projectData.concat(res.data);
-            console.log(res);
           } else {
             this.isShow = true;
           }
@@ -59,7 +58,6 @@ export default {
   },
   onReachBottom() {
     this.currentPage++;
-    console.log(this.currentPage);
     this.onReach();
   },
   onUnload() {

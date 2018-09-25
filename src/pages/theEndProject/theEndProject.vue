@@ -211,7 +211,6 @@ export default {
         minArr["num"] = num;
         this.minEfficiency.push(minArr);
       });
-      console.log(this.minEfficiency);
     }
   },
   onUnload() {
@@ -258,6 +257,9 @@ export default {
 .project-name .container .title {
   font-size: 18px;
   line-height: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .project-name .container .major-count {
 }
@@ -288,6 +290,9 @@ export default {
   height: 66rpx;
   border-bottom: 1px solid #eeeeee;
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .header-wapper .project-date {
   padding: 0 18rpx;

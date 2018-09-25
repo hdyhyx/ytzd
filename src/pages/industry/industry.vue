@@ -33,7 +33,6 @@ export default {
   },
   methods: {
     getData() {
-      console.log(1111);
       const data = post("/app/newProject/allProject", {
         currentPage: this.currentPage,
         industryType: this.industrType
@@ -42,14 +41,12 @@ export default {
         if (res.code === ERR_OK) {
           if (res.data !== undefined) {
             this.industrList = res.data;
-            console.log(this.industrList);
           }
         }
       });
     },
     onReach() {
       this.currentPage + 1;
-      console.log(this.currentPage);
       const data = post("/app/newProject/allProject", {
         currentPage: this.currentPage,
         industryType: this.industrType
@@ -58,7 +55,6 @@ export default {
         if (res.code === ERR_OK) {
           if (res.data !== undefined) {
             this.industrList = this.industrList.concat(res.data);
-            console.log(this.industrList);
           } else {
             this.isFooter = true;
           }

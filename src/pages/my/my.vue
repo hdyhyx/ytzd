@@ -5,10 +5,7 @@
         <div class="user-info"></div>
       </div>
     </div>
-    <!-- <div class="task" @click="routerLink">
-      <div class="icon"></div>
-      <div class="text">我的任务</div>
-    </div> -->
+    <div class="user-name">{{userName}}</div>
     <div class="edi-info" @click="ediInfo">
       <div class="icon"></div>
       <div class="text">版本信息</div>
@@ -22,7 +19,9 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      userName: ""
+    };
   },
   methods: {
     ediInfo() {
@@ -54,6 +53,14 @@ export default {
         }
       });
     }
+  },
+  onLoad() {
+    wx.getStorage({
+      key: "userInfo",
+      success: res => {
+        this.userName = res.data.userName;
+      }
+    });
   }
 };
 </script>
@@ -110,7 +117,7 @@ export default {
 .edi-info {
   width: 750rpx;
   padding: 20rpx 0;
-  margin-top: 150rpx;
+  margin-top: 20rpx;
   border-bottom: 1px solid #eeeeee;
 }
 .edi-info .icon {
@@ -127,6 +134,12 @@ export default {
   font-size: 16px;
   padding-left: 24rpx;
   vertical-align: top;
+}
+.user-name {
+  margin: 0 auto;
+  margin-top: 150rpx;
+  font-size: 16px;
+  text-align: center;
 }
 /* .task {
   width: 750rpx;

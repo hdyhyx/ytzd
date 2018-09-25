@@ -73,7 +73,6 @@ export default {
             Object.assign(val, { isopen: false });
             this.nodeDetail.push(val);
           });
-          console.log(this.projectDate.smallFinishTotal);
         }
       });
     }

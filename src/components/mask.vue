@@ -82,7 +82,6 @@ export default {
   methods: {
     powerDrawer: function(e) {
       var currentStatu = e.currentTarget.dataset.statu;
-      console.log(currentStatu);
       this.util(currentStatu);
       if (currentStatu === "close") {
         this.$emit("isPower", currentStatu);
@@ -135,7 +134,6 @@ export default {
   },
   mounted() {
     this.showModalStatus = this.showModal;
-    console.log(this.showModal);
   }
 };
 </script>

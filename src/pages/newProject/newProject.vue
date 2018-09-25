@@ -139,8 +139,6 @@ export default {
     wx.getStorage({
       key: "userInfo",
       success: res => {
-        console.log(res.data);
-        console.log(res.data.branchType);
         this.userId = res.data.userId;
       }
     });

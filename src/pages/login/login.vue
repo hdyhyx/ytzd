@@ -25,8 +25,8 @@ export default {
       isPwd: false,
       regUser: false,
       regPWD: false,
-      userVal: "13950468769",
-      pwdVal: "123456"
+      userVal: "",
+      pwdVal: ""
     };
   },
   methods: {
