@@ -46,7 +46,7 @@
         </div>
         <div class="content-price">
           <div class="text">计划总投资</div>
-          <div class="price">{{plannedInvestment}}亿</div>
+          <div class="price">{{plannedInvestment}}万</div>
         </div>
       </div>
       <div class="project-situation">
@@ -89,11 +89,11 @@
         </div>
         <div class="content-count">
           <div class="text">正常项目</div>
-          <div class="count">{{normalCount}}亿</div>
+          <div class="count">{{normalCount}}项</div>
         </div>
         <div class="content-count">
           <div class="text">逾期项目</div>
-          <div class="count">{{overdueCount}}亿</div>
+          <div class="count">{{overdueCount}}项</div>
         </div>
     </div>
     <split></split>

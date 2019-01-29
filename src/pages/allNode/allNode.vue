@@ -57,7 +57,7 @@ export default {
   padding: 10px 0 30px 0;
   background: #eeeeee;
 }
-node-wapper {
+.node-wapper {
   background: #eeeeee;
 }
 </style>

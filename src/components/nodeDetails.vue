@@ -18,10 +18,7 @@ export default {
     return {
       isContent: [],
       open: false,
-      node: [],
-      normalNum: 0,
-      delayNum: 0,
-      advanceNum: 0
+      node: []
     };
   },
   methods: {
@@ -50,22 +47,26 @@ export default {
   computed: {
     discBg(node) {
       this.nodeData.forEach((val, index) => {
-        if (val.status === "0") {
+        if (val.isDelay === "0") {
           Object.assign(val, { className: "normal" });
-        } else if (val.status === "1") {
+        } else if (val.isDelay === "1") {
           Object.assign(val, { className: "limit" });
-        } else if (val.status === "2") {
+        } else if (val.isDelay === "2") {
           Object.assign(val, { className: "advance" });
+        } else if (val.isDelay === "3") {
+          Object.assign(val, { className: "ongoing" });
         } else {
           Object.assign(val, { className: "no-startt" });
         }
         val.childNodesList.forEach((item, i) => {
-          if (item.status === "0") {
+          if (item.isDelay === "0") {
             Object.assign(item, { className: "normal" });
-          } else if (item.status === "1") {
+          } else if (item.isDelay === "1") {
             Object.assign(item, { className: "limit" });
-          } else if (item.status === "2") {
+          } else if (item.isDelay === "2") {
             Object.assign(item, { className: "advance" });
+          } else if (val.isDelay === "3") {
+            Object.assign(val, { className: "ongoing" });
           } else {
             Object.assign(item, { className: "no-startt" });
           }
@@ -131,13 +132,15 @@ export default {
   background: #999999;
 }
 .node-wapper .advance {
-  background: #0588fe;
+  background: #05d680;
 }
 .node-wapper .normal {
-  background: #05d680;
+  background: #0588fe;
 }
 .node-wapper .limit {
   background: #ff5a39;
 }
+.node-wapper .ongoing {
+  background: #fdd835;
+}
 </style>
-

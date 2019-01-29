@@ -3,7 +3,7 @@
     <div class="industry-title">
       <h1 class="title">{{title}}</h1>
       <div class="content">
-        <div class="text">计划总投资额(亿)</div>
+        <div class="text">计划总投资额(万)</div>
         <div class="count">{{price}}</div>
         <!-- <div class="years-plan-count">年度计划投资59.99亿</div>
         <div class="years-reality-count">年度实际投资58.88亿</div> -->

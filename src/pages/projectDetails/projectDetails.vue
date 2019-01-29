@@ -14,9 +14,16 @@
           <div class="progress" :style="{width:progressSpeed+'%'}"></div>
         </div>
         <div class="project-state">
-          <div class="normal">正常:{{projectDate.normalTotal}}</div>
           <div class="advance">超前:{{projectDate.advanceTotal}}</div>
+          <div class="normal">正常:{{projectDate.normalTotal}}</div>
           <div class="delay">延期:{{projectDate.delayTotal}}</div>
+
+        </div>
+        <div class="project-state">
+          <div class="no-start">未开始:{{projectDate.notBeginList}}</div>
+          <div class="ongoing">进行中:{{projectDate.underwayTotal}}</div>
+          <div class="totals"></div>
+
         </div>
     </div>
       <div>
@@ -88,8 +95,7 @@ export default {
   computed: {
     progressSpeed() {
       return (
-        this.projectDate.smallFinishTotal /
-        this.projectDate.smallTotal *
+        (this.projectDate.smallFinishTotal / this.projectDate.smallTotal) *
         100
       ).toFixed(0);
     }
@@ -104,7 +110,7 @@ export default {
 }
 .project-details .project-wapper {
   width: 690rpx;
-  height: 350rpx;
+  height: 420rpx;
   margin: 0 auto;
   padding-bottom: 10px;
   border-radius: 8px;
@@ -156,6 +162,7 @@ export default {
   width: 550rpx;
   height: 10rpx;
   margin: 0 auto;
+  margin-bottom: 20px;
   background: #eeeeee;
 }
 .progress-wapper .progress {
@@ -168,18 +175,9 @@ export default {
 .project-state {
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .project-state .normal {
-  flex: 0 0 160rpx;
-  line-height: 32px;
-  border: 1px solid #05d680;
-  border-radius: 8px;
-  text-align: center;
-  font-size: 14px;
-  color: #05d680;
-}
-.project-state .advance {
   flex: 0 0 160rpx;
   line-height: 32px;
   border: 1px solid #3699ff;
@@ -187,6 +185,15 @@ export default {
   text-align: center;
   font-size: 14px;
   color: #3699ff;
+}
+.project-state .advance {
+  flex: 0 0 160rpx;
+  line-height: 32px;
+  border: 1px solid #05d680;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #05d680;
 }
 .project-state .delay {
   flex: 0 0 160rpx;
@@ -196,5 +203,30 @@ export default {
   text-align: center;
   font-size: 14px;
   color: #eb6100;
+}
+.project-state .totals {
+  flex: 0 0 160rpx;
+  line-height: 32px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+}
+.project-state .no-start {
+  flex: 0 0 160rpx;
+  line-height: 32px;
+  border: 1px solid #666666;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #666666;
+}
+.project-state .ongoing {
+  flex: 0 0 160rpx;
+  line-height: 32px;
+  border: 1px solid #fdd835;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 14px;
+  color: #fdd835;
 }
 </style>

@@ -55,6 +55,7 @@ export default {
     }
   },
   onLoad() {
+    // 获取用户名
     wx.getStorage({
       key: "userInfo",
       success: res => {
